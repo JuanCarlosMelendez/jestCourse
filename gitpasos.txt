@@ -1,0 +1,153 @@
+1. En mi terminal en el cd C:\Users\juana\Desktop\Node\06-expressNode>
+2. Comando:
+git init (para inicializar el repositiorio en la carpeta del proyecto Node)
+3. Comando:
+git add . (agregara todos los archivos, es recomendable 
+haber agregado el archivo gitignore)
+4. Comando:
+git commit -m "Webserver" (Cualquier comentario)
+
+=========================================
+COPIA DE PASOS DEL CURSO GIT RESUMIDOS
+=========================================
+
+**CREAR ARCHIVO GIT**
+Pasos:
+1. Crear carpeta proyecto.
+
+2. Abrir git bash.
+
+3.cd _proyecto2_git (es el nombre de la carpeta del proyecto)
+Nota: podemos usar pwd para confirmar la ruta de la carpeta donde estamos
+ubicados en git antes de inicializar el repositorio.
+
+4. git init (para inicializar el repositorio en dicha carpeta)
+Nota: con el comando ls -al podemos chequear los archivos del repositorio
+deberian estar los archivos iniciales de la carpeta mas los creados del
+repositorio.
+
+5.  Con git status podemos revisar si hay cambios que agregar o no.
+
+6. Cambiamos el nombre de la rama de master a main como sigue:
+-Nos vamos a la rama master (si estamos iniciando ya estamos ahi)
+-Aplicamos el comando: git branch -m master main  
+(donde master es la rama a la que queremos cambiar el nombre y 
+main el nombre por el que queremos cambiarla)
+
+7.git add index.html (o nombre del archivo que deseo agregar)
+SI tenemos mas de una carpeta usamos git add . (esto agregara todos 
+los archivos de la carpeta)
+ 
+8. Finalmente git commit -m "Dejo cualquier mensaje"
+Nota: con git log podemos ver los cambios hechos en dicho archivo.
+
+9. Creamos una rama para desarrollo que es como la del jefe:
+-Nos ubicamos en la rama main y aqui agrego una rama development comando:
+git branch development.
+-Nos movemos a dicha rama con git checkout development (o nombre de la rama creada)
+
+10. Repetimos y creamos una rama que es donde realmente trabajare ( esto
+se hace para simular la forma de trabajar real con git y git hub con 
+una rama de supervisor y una de desarrollador)
+
+=======================================================================
+Nota: en caso de no tener configurado el git con nombre de usuario
+y correo es recomendarlo configurarlo antes de hacer el primer commit
+
+1. Chequeamos la configuracion con git config --list 
+sino aparece nombre y correo correctos los modificamos con
+(en terminal visualstudio code se sale con shift + z)
+	SE SALE CON SOLO APRETAR q
+2.git config --global user.name "Nombre apropiado"
+git config --global user.email "correo apropiado"
+
+========================================================================
+
+PASOS PARA SUBIR A GITHUB
+
+PASO: ingresar a github crear un repositorio nuevo que incluya el readme
+
+11. git remote add origin git@github.com:JuanCarlosMelendez/CursoNodejsTypescript.git
+esta es la direccion ssh que copie de mi repositorio creado en github
+
+12. Comprobamos haciendo:
+git remote
+(deberia aparecer un origen)
+
+13. Hacemos 
+git remote -v
+(debera indicarnos que tenemos una direccion donde hacer un fetch y push como sigue)
+
+=======================
+|||NOTA NO ASUSTARSE|||
+=======================
+14. Traemos los cambios remotos de github que traera el archivo readme
+sino dara error
+git pull origin main
+
+15.Git se reusara a fucionar (merge) historias no relacionadas, pero hacemos
+un comando para permitirlo, esto es por como trabaja github y compila no es gran cosa
+git pull origin main --allow-unrelated-histories
+
+16. Chequeamos como estan mis archivos con 
+ls 
+git status (para verificar si no hay nada a lo que hacerle commit)
+cls (limpia la consola)
+
+17. Ahora podemos subir a github con el comando:
+git push origin main
+
+18.	git log (para ver los commits hechos
+	git log --stat (para ver aun mas detalles) (sales con shift + z)
+	git show (para mostrar datos como a donde apunta head y las ramas	
+	git add . (para hacer add antes de commit)
+	git commit -m "" (obligatorio dejar mensaje) ó 
+	git commit (se abrira la pantalla para agregar comentario)
+	git branch (muestra solo las ramas)
+	git show-branch
+	git show-branch --all
+	gitk (abre el bash version escritorio para ver el arbolito)
+
+    
+(se sale con Esc + shift + z varias veces)
+
+19.
+
+=======================================================================
+ CREAR RAMAS DE GIT PARA SUBIR LUEGO A GITHUB
+=======================================================================
+
+**Ramas Git y Github**
+git show-branch --all
+
+Para subir al github una nueva rama hacemos:
+1. git pull origin main (buenas practicas primero nos traemos lo que sta en nube)
+
+2. git branch 06ExpressNode (ese 06ExpressNode es el nombre de la rama a crear)
+
+3. Si ahcemos git show para ver a donde apunta el head.
+
+2. git checkout 06ExpressNode (donde 06ExpressNode es nombre de la rama a la
+que deseo moverme) (al hacer esto me indicara que me he movido a otra rama)
+
+3. git pull origin main (buena practica para traernos lo que se ha subido
+o modificado en el proyecto)
+
+3. git push origin 06ExpressNode (donde 06ExpressNode es el nombre de mi rama 
+en la que trabajo y quiero hacer push)
+
+=================================================================
+ CREAR UN GIT TAG CURSO Node
+ ================================================================
+ 1. Hacemos:
+ git tag 
+ 2. Hacemos:
+ git tag -a v1.0.0 -m "Aqui coloco el mensaje que deseeo dejarme sobre este tag"
+ 3. Finalmmente lo subimos al gitHub con:
+ git push --tags
+ 4. Vamos al gitHub y hacemos click en tags, luego en el nombre del tag creado, en este caso
+ es v1.0.0 y selecccionamos editar:
+Allí agregamos una descripcion y un cuerpo de mensjae y finalmente seleccionamos release.
+Gracias al tag que creamos ahora cuando descarguemos el release tag se descargara la plantilla tal y como
+la guardamos en el tag.
+

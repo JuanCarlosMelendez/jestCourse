@@ -1,0 +1,38 @@
+
+Inicializamos proyecto de node
+1. npm init -y
+
+Instalamos dependencias que utilizaremos
+2. npm i -D typescript jest ts-jest @types/jest ts-node
+
+3. Creamos un archivo de configuracion de testeo de 
+jest desde terminal
+creamos un archivo en la carpeta raiz del proyecto 
+(en este caso seccion 2) llamado:
+jest.config.ts
+
+4. Creamos carpeta de raiz src/app con archivo Utils.ts
+y src/test Utils.test.ts
+Son las carpetas de la unidad a testear y el archivo 
+de testeo en su carpeta. Se recomienda que tengan el mismo 
+nombre. 
+
+5. Implementamos el testeo como se indica en los archivos.
+
+6. Configuar script de test en package.json donde
+inicamos que al correr npm test será llamada la 
+libreria de jest.
+
+  "scripts": {
+    "test": "jest"
+  },
+
+  7. Finalmente creamos el archivo tsconfig.json 
+  con estas opciones:
+  {
+    "compilerOptions": {
+        "esModuleInterop": true
+    }
+  }
+  8. Corremos la prueba con:
+  npm test
